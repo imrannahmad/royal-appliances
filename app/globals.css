@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #08080a;
+    --foreground: #f8fafc;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  scroll-behavior: smooth;
 }
+
+.font-serif-royal {
+  font-family: var(--font-cinzel), Georgia, serif;
+}
+
+.font-sans-royal {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+}
+
+/* Luxury Gold Typography & Gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF8D6 0%, #E6CA65 30%, #D4AF37 60%, #AA7C11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-text-bright {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFE999 40%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #B38F24 100%);
+}
+
+.gold-gradient-bg:hover {
+  background: linear-gradient(135deg, #F3E5AB 0%, #FFF5C0 50%, #D4AF37 100%);
+}
+
+/* Unique Luxury Card Hover & Shimmer */
+.card-hover-unique {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(14, 15, 20, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+.card-hover-unique:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.25), 0 0 15px rgba(212, 175, 55, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Floating particle keyframes */
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.6;
+  }
+}
+
+.animate-particle-1 { animation: particleFloat 7s infinite ease-in-out; }
+.animate-particle-2 { animation: particleFloat 10s infinite ease-in-out 2s; }
+.animate-particle-3 { animation: particleFloat 8s infinite ease-in-out 4s; }
+.animate-particle-4 { animation: particleFloat 12s infinite ease-in-out 1s; }
+
+/* Scroll indicator bounce */
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.9;
+  }
+}
+
+.animate-scroll-bounce {
+  animation: scrollBounce 2.5s infinite ease-in-out;
+}
+
+/* Infinite Marquee Scroll for Reviews */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 36s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #08080a;
+}
+::-webkit-scrollbar-thumb {
+  background: #25241b;
+  border-radius: 3px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
