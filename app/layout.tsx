@@ -46,9 +46,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${cinzel.variable} ${plusJakarta.variable} scroll-smooth dark h-full antialiased`}
     >
-      <body className="min-h-full bg-[#08080A] text-slate-100 font-sans selection:bg-[#D4AF37]/30 selection:text-[#FFD700] flex flex-col">
+      <body suppressHydrationWarning className="min-h-full bg-[#08080A] text-slate-100 font-sans selection:bg-[#D4AF37]/30 selection:text-[#FFD700] flex flex-col">
         {children}
       </body>
     </html>
