@@ -7,19 +7,19 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] lg:min-h-screen bg-[#08080A] overflow-hidden flex flex-col justify-between pt-24 sm:pt-28 lg:pt-32"
+      className="relative bg-[#08080A] overflow-hidden flex flex-col justify-between pt-28 sm:pt-36 lg:pt-40 pb-24 lg:pb-24"
     >
-      {/* Radial Gold Glow Spotlight */}
-      <div className="absolute top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[radial-gradient(circle,rgba(212,175,55,0.14)_0%,rgba(8,8,10,0)_70%)] blur-3xl pointer-events-none" />
+      {/* Background Radial Gold Spotlight */}
+      <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[650px] h-[350px] sm:h-[650px] bg-[radial-gradient(circle,rgba(212,175,55,0.13)_0%,rgba(8,8,10,0)_70%)] blur-3xl pointer-events-none" />
 
-      {/* Main Split-Screen Grid */}
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-10 my-auto pb-16 lg:pb-24">
+      {/* Main Container */}
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-10 my-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* LEFT SIDE CONTENT */}
-          <div className="lg:col-span-7 space-y-6 text-left pt-4 lg:pt-0">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
             {/* Eyebrow Label Badge */}
             <FadeIn delay={0.05} direction="down">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#181926] border border-[#D4AF37]/30 text-[#FFD700] text-xs font-semibold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#161724] border border-[#D4AF37]/30 text-[#FFD700] text-[11px] sm:text-xs font-semibold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>SIWAN&apos;S TRUSTED APPLIANCE EXPERTS</span>
               </div>
@@ -27,7 +27,7 @@ export default function Hero() {
 
             {/* Main Headline */}
             <FadeIn delay={0.1}>
-              <h1 className="font-serif-royal text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
+              <h1 className="font-serif-royal text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.18]">
                 Reliable Appliance <br className="hidden sm:inline" />
                 <span className="gold-gradient-text">Repair &amp; Service</span>
               </h1>
@@ -40,50 +40,50 @@ export default function Hero() {
               </p>
             </FadeIn>
 
-            {/* Appliance Pills Quick Selector */}
+            {/* Appliance Grid Pills (2-Col on Mobile, Flex on Desktop) */}
             <FadeIn delay={0.18}>
-              <div className="flex flex-wrap gap-2 pt-1 text-xs text-slate-300">
-                <span className="px-3 py-1.5 rounded-lg bg-[#12131D] border border-white/10 flex items-center gap-1.5 hover:border-[#D4AF37]/40 transition-colors">
-                  ❄️ AC Service
-                </span>
-                <span className="px-3 py-1.5 rounded-lg bg-[#12131D] border border-white/10 flex items-center gap-1.5 hover:border-[#D4AF37]/40 transition-colors">
-                  🧊 Refrigerator
-                </span>
-                <span className="px-3 py-1.5 rounded-lg bg-[#12131D] border border-white/10 flex items-center gap-1.5 hover:border-[#D4AF37]/40 transition-colors">
-                  🧺 Washing Machine
-                </span>
-                <span className="px-3 py-1.5 rounded-lg bg-[#12131D] border border-white/10 flex items-center gap-1.5 hover:border-[#D4AF37]/40 transition-colors">
-                  ♨️ Geyser Fix
-                </span>
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 text-xs text-slate-300">
+                <div className="px-3 py-2 rounded-xl bg-[#12131D] border border-white/10 flex items-center justify-center sm:justify-start gap-1.5 hover:border-[#D4AF37]/40 transition-colors">
+                  <span>❄️ AC Service</span>
+                </div>
+                <div className="px-3 py-2 rounded-xl bg-[#12131D] border border-white/10 flex items-center justify-center sm:justify-start gap-1.5 hover:border-[#D4AF37]/40 transition-colors">
+                  <span>🧊 Refrigerator</span>
+                </div>
+                <div className="px-3 py-2 rounded-xl bg-[#12131D] border border-white/10 flex items-center justify-center sm:justify-start gap-1.5 hover:border-[#D4AF37]/40 transition-colors">
+                  <span>🧺 Washing Machine</span>
+                </div>
+                <div className="px-3 py-2 rounded-xl bg-[#12131D] border border-white/10 flex items-center justify-center sm:justify-start gap-1.5 hover:border-[#D4AF37]/40 transition-colors">
+                  <span>♨️ Geyser Fix</span>
+                </div>
               </div>
             </FadeIn>
 
-            {/* Two CTA Buttons Side by Side */}
+            {/* CTA Buttons: Full-width Stacked on Mobile, Side-by-side on Desktop */}
             <FadeIn delay={0.2}>
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
-                {/* Primary Filled Gold Button */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+                {/* Primary Gold Call Button */}
                 <a
                   href="tel:+919661633901"
-                  className="gold-gradient-bg text-[#08080A] font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_35px_rgba(212,175,55,0.7)] transform hover:-translate-y-0.5 transition-all duration-300 group"
+                  className="w-full sm:w-auto gold-gradient-bg text-[#08080A] font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_35px_rgba(212,175,55,0.7)] transform active:scale-95 transition-all duration-300 group"
                 >
                   <Phone className="w-4 h-4 fill-current group-hover:rotate-12 transition-transform" />
                   <span>Call Now +91 9661633901</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
 
-                {/* Secondary Outline Button */}
+                {/* Secondary View Services Button */}
                 <a
                   href="#services"
-                  className="bg-[#08080A] text-slate-200 border border-white/20 hover:border-[#D4AF37] hover:text-[#FFD700] font-semibold text-xs sm:text-sm px-6 py-3.5 rounded-full flex items-center justify-center gap-2 transition-all duration-300"
+                  className="w-full sm:w-auto bg-[#08080A] text-slate-200 border border-white/20 hover:border-[#D4AF37] hover:text-[#FFD700] font-semibold text-xs sm:text-sm px-6 py-3.5 rounded-full flex items-center justify-center gap-2 transition-all duration-300"
                 >
                   <span>View Services</span>
                 </a>
               </div>
             </FadeIn>
 
-            {/* Trust Points Bar */}
+            {/* Trust Points Row */}
             <FadeIn delay={0.25}>
-              <div className="pt-6 border-t border-white/10 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-slate-400">
+              <div className="pt-5 sm:pt-6 border-t border-white/10 flex flex-wrap items-center gap-3 sm:gap-6 text-xs text-slate-400">
                 <div className="flex items-center gap-1.5">
                   <Clock className="w-4 h-4 text-[#D4AF37]" />
                   <span>30-Min Rapid Arrival</span>
@@ -100,59 +100,49 @@ export default function Hero() {
             </FadeIn>
           </div>
 
-          {/* RIGHT SIDE: Male Technician Photo with Animated Floating Glass Overlay Cards */}
+          {/* RIGHT SIDE: Technician Photo Card (Clean Mobile Layout with Zero Badge Collisions) */}
           <div className="lg:col-span-5 relative mt-4 lg:mt-0">
             <FadeIn delay={0.15} direction="left">
-              {/* Outer Glowing Border Ring */}
-              <div className="relative rounded-2xl overflow-hidden border border-[#D4AF37]/40 animate-glow-pulse group">
-                {/* Male Technician Photo */}
+              <div className="relative rounded-2xl overflow-hidden border border-[#D4AF37]/40 shadow-[0_10px_40px_rgba(0,0,0,0.9)] animate-glow-pulse group">
+                {/* Technician Image */}
                 <img
                   src="/technician_hero.jpg"
                   alt="Professional Male Technician Servicing AC Unit in Siwan, Bihar"
-                  className="w-full h-[340px] sm:h-[440px] lg:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[320px] sm:h-[440px] lg:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
 
                 {/* Gradient Blend Overlays */}
                 <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[#08080A] via-[#08080A]/40 to-transparent pointer-events-none hidden lg:block" />
-                <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#08080A]/85 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#08080A]/85 to-transparent pointer-events-none" />
                 <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#08080A]/95 to-transparent pointer-events-none" />
 
-                {/* Top-Left Floating Badge: Rapid Dispatch */}
-                <div className="absolute top-4 left-4 bg-[#08080A]/90 border border-emerald-500/40 px-3 py-1.5 rounded-xl backdrop-blur-md shadow-lg flex items-center gap-2 animate-card-float">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                  <span className="text-[10px] text-emerald-300 font-semibold uppercase tracking-wider flex items-center gap-1">
-                    <Zap className="w-3 h-3 text-amber-300" />
-                    <span>30-Min Arrival in Siwan</span>
-                  </span>
-                </div>
-
-                {/* Top-Right Floating Glass Badge: 4.9 Rating */}
-                <div className="absolute top-4 right-4 bg-[#08080A]/90 border border-[#D4AF37]/50 px-3.5 py-2 rounded-xl backdrop-blur-md shadow-lg flex items-center gap-2 animate-card-float">
+                {/* Top-Right Glass Rating Badge (Clean & Non-Overlapping) */}
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-[#08080A]/90 border border-[#D4AF37]/50 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl backdrop-blur-md shadow-lg flex items-center gap-2 animate-card-float">
                   <div className="flex items-center gap-0.5 text-[#FFD700]">
                     <Star className="w-3.5 h-3.5 fill-current animate-pulse" />
                     <span className="text-xs font-bold text-white ml-1">4.9</span>
                   </div>
                   <span className="text-[10px] text-slate-300 font-medium border-l border-white/20 pl-2">
-                    1,200+ Homes in Siwan
+                    1,200+ Homes
                   </span>
                 </div>
 
                 {/* Bottom Overlay Card: Certified Technicians */}
-                <div className="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-6 bg-[#08080A]/95 border border-[#D4AF37]/40 rounded-xl p-3.5 backdrop-blur-md flex items-center justify-between shadow-2xl transition-all duration-300">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#FFD700] via-[#D4AF37] to-[#AA7C11] p-[1px] shrink-0 shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-[#08080A]/95 border border-[#D4AF37]/40 rounded-xl p-3 sm:p-3.5 backdrop-blur-md flex items-center justify-between shadow-2xl">
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-br from-[#FFD700] via-[#D4AF37] to-[#AA7C11] p-[1px] shrink-0 shadow-[0_0_10px_rgba(212,175,55,0.4)]">
                       <div className="w-full h-full bg-[#08080A] rounded-full flex items-center justify-center">
-                        <ShieldCheck className="w-4.5 h-4.5 text-[#FFD700]" />
+                        <ShieldCheck className="w-4 h-4 text-[#FFD700]" />
                       </div>
                     </div>
-                    <div>
-                      <p className="text-white font-bold text-xs">Expert Doorstep Technician</p>
-                      <p className="text-slate-400 text-[10px]">Verified &bull; Certified &bull; Professional</p>
+                    <div className="min-w-0">
+                      <p className="text-white font-bold text-xs truncate">Expert Doorstep Technician</p>
+                      <p className="text-slate-400 text-[10px] truncate">Verified &bull; Certified &bull; Professional</p>
                     </div>
                   </div>
 
-                  <span className="text-[10px] text-[#FFD700] font-mono bg-[#161724] px-2.5 py-1 rounded-md border border-[#D4AF37]/30 shrink-0">
-                    Siwan, Bihar
+                  <span className="text-[10px] text-[#FFD700] font-mono bg-[#161724] px-2 py-1 sm:px-2.5 rounded-md border border-[#D4AF37]/30 shrink-0 ml-2">
+                    Siwan, BR
                   </span>
                 </div>
               </div>
@@ -162,9 +152,9 @@ export default function Hero() {
       </div>
 
       {/* BOTTOM CURVED DIVIDER */}
-      <div className="relative w-full overflow-hidden leading-none z-20 pointer-events-none">
+      <div className="relative w-full overflow-hidden leading-none z-20 pointer-events-none mt-6 sm:mt-10">
         <svg
-          className="relative block w-full h-12 sm:h-20 lg:h-24 text-[#090A0E]"
+          className="relative block w-full h-10 sm:h-20 lg:h-24 text-[#090A0E]"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
           fill="currentColor"
