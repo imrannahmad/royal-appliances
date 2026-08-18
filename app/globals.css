@@ -107,6 +107,33 @@ html {
   animation-play-state: paused;
 }
 
+/* Card floating animation */
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-card-float {
+  animation: cardFloat 5s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(212, 175, 55, 0.5);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 4s infinite ease-in-out;
+}
+
 /* Subtle Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -122,4 +149,5 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #D4AF37;
 }
+
 

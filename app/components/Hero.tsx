@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRight, Phone, ShieldCheck, Star, Sparkles, Clock, Wrench } from "lucide-react";
+import { ChevronRight, Phone, ShieldCheck, Star, Sparkles, Clock, Wrench, Zap } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 export default function Hero() {
@@ -10,7 +10,7 @@ export default function Hero() {
       className="relative min-h-[90vh] lg:min-h-screen bg-[#08080A] overflow-hidden flex flex-col justify-between pt-24 sm:pt-28 lg:pt-32"
     >
       {/* Radial Gold Glow Spotlight */}
-      <div className="absolute top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(212,175,55,0.12)_0%,rgba(8,8,10,0)_70%)] blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[radial-gradient(circle,rgba(212,175,55,0.14)_0%,rgba(8,8,10,0)_70%)] blur-3xl pointer-events-none" />
 
       {/* Main Split-Screen Grid */}
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-10 my-auto pb-16 lg:pb-24">
@@ -43,16 +43,16 @@ export default function Hero() {
             {/* Appliance Pills Quick Selector */}
             <FadeIn delay={0.18}>
               <div className="flex flex-wrap gap-2 pt-1 text-xs text-slate-300">
-                <span className="px-3 py-1.5 rounded-lg bg-[#12131D] border border-white/10 flex items-center gap-1.5">
+                <span className="px-3 py-1.5 rounded-lg bg-[#12131D] border border-white/10 flex items-center gap-1.5 hover:border-[#D4AF37]/40 transition-colors">
                   ❄️ AC Service
                 </span>
-                <span className="px-3 py-1.5 rounded-lg bg-[#12131D] border border-white/10 flex items-center gap-1.5">
+                <span className="px-3 py-1.5 rounded-lg bg-[#12131D] border border-white/10 flex items-center gap-1.5 hover:border-[#D4AF37]/40 transition-colors">
                   🧊 Refrigerator
                 </span>
-                <span className="px-3 py-1.5 rounded-lg bg-[#12131D] border border-white/10 flex items-center gap-1.5">
+                <span className="px-3 py-1.5 rounded-lg bg-[#12131D] border border-white/10 flex items-center gap-1.5 hover:border-[#D4AF37]/40 transition-colors">
                   🧺 Washing Machine
                 </span>
-                <span className="px-3 py-1.5 rounded-lg bg-[#12131D] border border-white/10 flex items-center gap-1.5">
+                <span className="px-3 py-1.5 rounded-lg bg-[#12131D] border border-white/10 flex items-center gap-1.5 hover:border-[#D4AF37]/40 transition-colors">
                   ♨️ Geyser Fix
                 </span>
               </div>
@@ -100,10 +100,11 @@ export default function Hero() {
             </FadeIn>
           </div>
 
-          {/* RIGHT SIDE: Male Technician Photo with Glass Overlay Badges */}
+          {/* RIGHT SIDE: Male Technician Photo with Animated Floating Glass Overlay Cards */}
           <div className="lg:col-span-5 relative mt-4 lg:mt-0">
             <FadeIn delay={0.15} direction="left">
-              <div className="relative rounded-2xl overflow-hidden border border-[#D4AF37]/30 shadow-[0_10px_50px_rgba(0,0,0,0.9)] group">
+              {/* Outer Glowing Border Ring */}
+              <div className="relative rounded-2xl overflow-hidden border border-[#D4AF37]/40 animate-glow-pulse group">
                 {/* Male Technician Photo */}
                 <img
                   src="/technician_hero.jpg"
@@ -113,13 +114,22 @@ export default function Hero() {
 
                 {/* Gradient Blend Overlays */}
                 <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[#08080A] via-[#08080A]/40 to-transparent pointer-events-none hidden lg:block" />
-                <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#08080A]/80 to-transparent pointer-events-none" />
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#08080A]/95 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#08080A]/85 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#08080A]/95 to-transparent pointer-events-none" />
 
-                {/* Top Floating Glass Badge: Rating */}
-                <div className="absolute top-4 right-4 bg-[#08080A]/90 border border-[#D4AF37]/40 px-3.5 py-2 rounded-xl backdrop-blur-md shadow-lg flex items-center gap-2">
+                {/* Top-Left Floating Badge: Rapid Dispatch */}
+                <div className="absolute top-4 left-4 bg-[#08080A]/90 border border-emerald-500/40 px-3 py-1.5 rounded-xl backdrop-blur-md shadow-lg flex items-center gap-2 animate-card-float">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  <span className="text-[10px] text-emerald-300 font-semibold uppercase tracking-wider flex items-center gap-1">
+                    <Zap className="w-3 h-3 text-amber-300" />
+                    <span>30-Min Arrival in Siwan</span>
+                  </span>
+                </div>
+
+                {/* Top-Right Floating Glass Badge: 4.9 Rating */}
+                <div className="absolute top-4 right-4 bg-[#08080A]/90 border border-[#D4AF37]/50 px-3.5 py-2 rounded-xl backdrop-blur-md shadow-lg flex items-center gap-2 animate-card-float">
                   <div className="flex items-center gap-0.5 text-[#FFD700]">
-                    <Star className="w-3.5 h-3.5 fill-current" />
+                    <Star className="w-3.5 h-3.5 fill-current animate-pulse" />
                     <span className="text-xs font-bold text-white ml-1">4.9</span>
                   </div>
                   <span className="text-[10px] text-slate-300 font-medium border-l border-white/20 pl-2">
@@ -128,16 +138,16 @@ export default function Hero() {
                 </div>
 
                 {/* Bottom Overlay Card: Certified Technicians */}
-                <div className="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-6 bg-[#08080A]/95 border border-[#D4AF37]/40 rounded-xl p-3.5 backdrop-blur-md flex items-center justify-between shadow-xl">
+                <div className="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-6 bg-[#08080A]/95 border border-[#D4AF37]/40 rounded-xl p-3.5 backdrop-blur-md flex items-center justify-between shadow-2xl transition-all duration-300">
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#FFD700] to-[#AA7C11] p-[1px] shrink-0">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#FFD700] via-[#D4AF37] to-[#AA7C11] p-[1px] shrink-0 shadow-[0_0_10px_rgba(212,175,55,0.4)]">
                       <div className="w-full h-full bg-[#08080A] rounded-full flex items-center justify-center">
-                        <ShieldCheck className="w-4 h-4 text-[#FFD700]" />
+                        <ShieldCheck className="w-4.5 h-4.5 text-[#FFD700]" />
                       </div>
                     </div>
                     <div>
                       <p className="text-white font-bold text-xs">Expert Doorstep Technician</p>
-                      <p className="text-slate-400 text-[10px]">Verified • Certified • Professional</p>
+                      <p className="text-slate-400 text-[10px]">Verified &bull; Certified &bull; Professional</p>
                     </div>
                   </div>
 
